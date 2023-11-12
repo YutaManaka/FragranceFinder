@@ -1,10 +1,9 @@
-import { useState } from "react"
 type BlueButtonProps = {
   text: string,
   pageId: number,
   changePageId: (pageId: number) => number
 }
-export const BlueButton = ({text, pageId, changePageId}: BlueButtonProps): JSX.Element => { 
+export const BlueButton = ({text, pageId, changePageId}: BlueButtonProps): JSX.Element => {
   const ButtonClickAction = () => {
     if (pageId === 0) {
       changePageId(1)
@@ -14,12 +13,10 @@ export const BlueButton = ({text, pageId, changePageId}: BlueButtonProps): JSX.E
   }
   return (
     <div>
-      {/* {pageId === 0 && */}
-        <button onClick={ButtonClickAction}
-          className='bg-blue-400 border-2 border-solid rounded-full text-white font-semibold  px-10 py-4 hover:opacity-50 transition-all'>
-          {text}
-        </button>
-      {/* } */}
+      <button onClick={ButtonClickAction}
+        className='bg-blue-400 border-2 border-solid rounded-full text-white font-semibold  px-10 py-4 hover:opacity-50 transition-all'>
+        {text}
+      </button>
     </div>
   )
 }
