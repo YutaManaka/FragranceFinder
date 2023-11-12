@@ -6,8 +6,8 @@ export const AppLayout: FC = () => {
       {/* ヘッダー */}
       <div className='w-full bg-white border-b-2 border-gray-300'>
         <header>
-          <div className='flex justify-center'>
-            <img src="/header-logo.png" />
+          <div className='flex justify-center items-center h-16 px-10'>
+            <img src="./header-logo.png" />
           </div>
         </header>
       </div>
@@ -20,7 +20,7 @@ export const AppLayout: FC = () => {
           </div>
           {/* 画像 */}
           <div className='flex justify-center px-4'>
-            <img src="/0.jpeg" />
+            <img src="./0.jpeg" />
           </div>
           {/* 解答欄 */}
           <div className='flex justify-center items-center h-1/2'>
