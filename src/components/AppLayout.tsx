@@ -1,11 +1,17 @@
 import { useState } from "react"
+import { PAGES } from "../constants"
 import { BlueButton } from "./BlueButton"
 
 export const AppLayout = (): JSX.Element => {
+  const [pageId, setPageId] = useState(0)
+  // 質問分を切り替える
+  const changeQuestionText = (pageId: number): string => {
+    const page = PAGES.filter((page) => page.pageId === pageId)
+    return page[0].question
+  }
   // 画像を切り替える
   const changeImagePath = (pageId: number): string => `./${pageId}.jpeg`
   // 青ボタンでpageIdを変更する
-  const [pageId, setPageId] = useState(0)
   const changePageId = (newValue: number) => {
     setPageId(newValue);
   }
@@ -24,8 +30,8 @@ export const AppLayout = (): JSX.Element => {
         <div className='bg-gray-100 py-5 h-5/6'>
           <div className='bg-white mx-10 h-full'>
             {/* 質問文 */}
-            <div className='h-20'>
-
+            <div className='text-2xl font-bold flex justify-center items-center h-20'>
+              {changeQuestionText(pageId)}
             </div>
             {/* 画像 */}
             <div className='flex justify-center px-4'>
