@@ -1,6 +1,14 @@
+import { useState } from "react"
 import { BlueButton } from "./BlueButton"
 
 export const AppLayout = (): JSX.Element => {
+  // 画像を切り替える
+  const changeImagePath = (pageId: number): string => `./${pageId}.jpeg`
+  // 青ボタンでpageIdを変更する
+  const [pageId, setPageId] = useState(0)
+  const changePageId = (newValue: number) => {
+    setPageId(newValue);
+  }
   return (
     <>
       <div className='h-screen'>
@@ -21,12 +29,18 @@ export const AppLayout = (): JSX.Element => {
             </div>
             {/* 画像 */}
             <div className='flex justify-center px-4'>
-              <img src="./0.jpeg" />
+              {/* <img src="./0.jpeg" /> */}
+              <img src={changeImagePath(pageId)} />
             </div>
             {/* 解答欄 */}
             <div className='flex justify-center items-center h-1/2'>
               <div>
-                <BlueButton text={'診断を始める'}></BlueButton>
+                {pageId === 0 &&
+                  <BlueButton
+                    text={'診断を始める'}
+                    pageId={pageId}
+                    changePageId={changePageId} />
+                }
               </div>
             </div>
             {/* 進捗表示 */}
