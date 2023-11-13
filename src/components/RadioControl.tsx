@@ -1,10 +1,5 @@
 import React, { useState } from "react"
-
-/** ラジオボタン設定 */
-interface Answer {
-  label: string
-  value: string
-}
+import { Answer } from "../constants"
 
 type RadioProps = {
   answers: Answer[],

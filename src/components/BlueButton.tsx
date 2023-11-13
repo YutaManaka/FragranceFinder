@@ -1,7 +1,7 @@
 type BlueButtonProps = {
   text: string,
   pageId: number,
-  changePageId: (pageId: number) => number
+  changePageId: (pageId: number) => void
 }
 export const BlueButton = ({text, pageId, changePageId}: BlueButtonProps): JSX.Element => {
   const ButtonClickAction = () => {

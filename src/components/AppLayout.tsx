@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { PAGES } from "../constants"
+import { Answer, PAGES } from "../constants"
 import { BlueButton } from "./BlueButton"
 import { RadioControl } from "./RadioControl"
 
@@ -11,14 +11,15 @@ export const AppLayout = (): JSX.Element => {
     return obj[key];
   }
   const changeQuestionText = (pageId: number): string => {
-    return getProperty(PAGES, pageId).question
+    const key: keyof typeof PAGES = pageId
+    return getProperty(PAGES, key).question
   }
 
   // 画像を切り替える
   const changeImagePath = (pageId: number): string => `./${pageId}.jpeg`
 
   // 解答欄を切り替える
-  const getAnswers = (pageId: number): string => {
+  const getAnswers = (pageId: number): Answer[] => {
     return getProperty(PAGES, pageId).answers
   }
 
