@@ -1,16 +1,16 @@
-export const PAGES = [
-    {
+export const PAGES = {
+    0: {
         pageId: 0,
         question: '',
-        answers: {}
+        answers: []
     },
-    {
+    1: {
         pageId: 1,
         question: '探しているのは？',
-        answers: {
-            0: '女性用香水',
-            1: '男性用香水',
-            2: 'どちらでもよい'
-        }
+        answers: [
+            {label: '女性用香水', value: 'female'},
+            {label: '男性用香水', value: 'male'},
+            {label: 'どちらでもよい', value: 'both'}
+        ]
     }
-]
+}

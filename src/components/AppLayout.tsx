@@ -1,16 +1,27 @@
 import { useState } from "react"
 import { PAGES } from "../constants"
 import { BlueButton } from "./BlueButton"
+import { RadioControl } from "./RadioControl"
 
 export const AppLayout = (): JSX.Element => {
   const [pageId, setPageId] = useState(0)
-  // 質問分を切り替える
-  const changeQuestionText = (pageId: number): string => {
-    const page = PAGES.filter((page) => page.pageId === pageId)
-    return page[0].question
+
+  // 質問文を切り替える
+  function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
+    return obj[key];
   }
+  const changeQuestionText = (pageId: number): string => {
+    return getProperty(PAGES, pageId).question
+  }
+
   // 画像を切り替える
   const changeImagePath = (pageId: number): string => `./${pageId}.jpeg`
+
+  // 解答欄を切り替える
+  const getAnswers = (pageId: number): string => {
+    return getProperty(PAGES, pageId).answers
+  }
+
   // 青ボタンでpageIdを変更する
   const changePageId = (newValue: number) => {
     setPageId(newValue);
@@ -41,11 +52,16 @@ export const AppLayout = (): JSX.Element => {
             {/* 解答欄 */}
             <div className='flex justify-center items-center h-1/2'>
               <div>
+                
                 {pageId === 0 &&
                   <BlueButton
                     text={'診断を始める'}
                     pageId={pageId}
                     changePageId={changePageId} />
+                }
+                {pageId === 1 &&
+                  <RadioControl
+                    answers={getAnswers(pageId)}/>
                 }
               </div>
             </div>
