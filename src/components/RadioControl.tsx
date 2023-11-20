@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react"
-import { Choice, Answers } from "../constants"
+import { Choice } from "../constants"
 
 type RadioProps = {
   choices: Choice[],
   pageId: number,
   changePageId: (pageId: number) => void,
-  saveAnswers: (pageId: number, answers: Answers) => void
+  saveAnswers: (pageId: number, answer: string) => void
 }
 
 export const RadioControl = ({choices, pageId, changePageId, saveAnswers}: RadioProps) => {
