@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Choice, PAGES } from "../constants"
+import { Choice, PAGES, ANSWERS } from "../constants"
 import { BlueButton } from "./BlueButton"
 import { RadioControl } from "./RadioControl"
 
@@ -18,6 +18,12 @@ export const AppLayout = (): JSX.Element => {
   // 画像を切り替える
   const changeImagePath = (pageId: number): string => `./${pageId}.jpeg`
 
+  // radioの質問か判定する
+  const isRadio = (pageId: number): boolean => {
+    const radioIds = [1,2,3,4,7,8,9,10,11]
+    return radioIds.includes(pageId)
+  }
+
   // 解答欄を切り替える
   const getChoices = (pageId: number): Choice[] => {
     return getProperty(PAGES, pageId).choices
@@ -26,6 +32,12 @@ export const AppLayout = (): JSX.Element => {
   // 青ボタンでpageIdを変更する
   const changePageId = (newValue: number) => {
     setPageId(newValue);
+  }
+
+  // 選択肢を選んだ際に回答を保存する
+  const saveAnswers = (pageId: number, answer: string) => {
+    ANSWERS[pageId] = answer
+    console.log(ANSWERS)
   }
   return (
     <>
@@ -59,9 +71,11 @@ export const AppLayout = (): JSX.Element => {
                     pageId={pageId}
                     changePageId={changePageId} />
                 }
-                {pageId === 1 &&
+                {isRadio(pageId) &&
                   <RadioControl
-                    choices={getChoices(pageId)}/>
+                    choices={getChoices(pageId)}
+                    pageId={pageId}
+                    changePageId={changePageId} />
                 }
               </div>
             </div>

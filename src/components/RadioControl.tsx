@@ -3,16 +3,32 @@ import { Choice } from "../constants"
 
 type RadioProps = {
   choices: Choice[],
+  pageId: number,
+  changePageId: (pageId: number) => void
 }
 
-export const RadioControl = ({choices}: RadioProps) => {
+export const RadioControl = ({choices, pageId, changePageId}: RadioProps) => {
     // 選択中のラジオボタンvalue
     const [selected, setSelected] = useState("")
+
     // ラジオボタン切り替えイベント
-    const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => setSelected(event.target.value)
+    const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setSelected(event.target.value)
+      RadioChangeAction()
+    }
+
     // 表示後、時間差でボタン押せるようにする
     const [enabled, setEnabled] = useState(false)
     useEffect(() => {setTimeout(() => {setEnabled(true)}, 1000)})
+
+    // 選択後にpageIdを変更
+    const RadioChangeAction = () => {
+      if (pageId === 1) {
+        changePageId(2)
+      } else {
+        console.log('1じゃないよ')
+      }
+    }
     return (
         <div className={'container form-check ' + (enabled ? '' : 'pointer-events-none')}>
             <div className="row">
