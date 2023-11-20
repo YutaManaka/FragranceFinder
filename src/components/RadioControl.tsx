@@ -1,34 +1,55 @@
-import React, { useState } from "react"
-import { Answer } from "../constants"
+import React, { useState, useEffect } from "react"
+import { Choice } from "../constants"
 
 type RadioProps = {
-  answers: Answer[],
+  choices: Choice[],
+  pageId: number,
+  changePageId: (pageId: number) => void,
+  saveAnswers: (pageId: number, answer: string) => void
 }
 
-export const RadioControl = ({answers}: RadioProps) => {
-    /** 選択中のラジオボタンvalue */
+export const RadioControl = ({choices, pageId, changePageId, saveAnswers}: RadioProps) => {
+    // 選択中のラジオボタンvalue
     const [selected, setSelected] = useState("")
-    /** ラジオボタン切り替えイベント */
-    const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => setSelected(event.target.value)
 
+    // ラジオボタン切り替えイベント
+    const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setSelected(event.target.value)
+      saveAnswers(pageId, event.target.value)
+      RadioChangeAction()
+    }
+
+    // 表示後、時間差でボタン押せるようにする
+    const [enabled, setEnabled] = useState(false)
+    useEffect(() => {setTimeout(() => {setEnabled(true)}, 1000)})
+
+    // 選択後にpageIdを変更
+    const RadioChangeAction = () => {
+      if (pageId === 1) {
+        changePageId(2)
+      } else {
+        console.log('1じゃないよ')
+      }
+    }
     return (
-        <div className="container form-check">
+        <div className={'container form-check ' + (enabled ? '' : 'pointer-events-none')}>
             <div className="row">
-            {answers.map(answer => {
+            {choices.map(choice => {
                 return (
                     <div
                       className="col-4"
-                      key={answer.value}>
+                      key={choice.value}>
                         {/* checked属性に式を定義する */}
                         <input
-                          id={answer.value}
+                          id={choice.value}
                           type="radio"
                           className="hidden"
-                          value={answer.value} checked={answer.value === selected} onChange={changeValue}/>
+                          value={choice.value} checked={choice.value === selected}
+                          onChange={changeValue}/>
                         <label
-                          htmlFor={answer.value}
+                          htmlFor={choice.value}
                           className="flex flex-col w-full max-w-lg mx-auto text-center border-2 rounded-xl border-blue-400 p-2 my-4 hover:bg-blue-200 transition-all">
-                            <span className="fs-6">{answer.label}</span>
+                            <span className="fs-6">{choice.label}</span>
                         </label>
                     </div>
                 )
