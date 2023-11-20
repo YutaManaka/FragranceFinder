@@ -14,7 +14,7 @@ type Pages = {
 type Answers = {
     [key: number]: string
 }
-export type {Choice}
+export type {Choice, Answers}
 export const PAGES: Pages = {
     0: {
         pageId: 0,

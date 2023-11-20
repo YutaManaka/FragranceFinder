@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from "react"
-import { Choice } from "../constants"
+import { Choice, Answers } from "../constants"
 
 type RadioProps = {
   choices: Choice[],
   pageId: number,
-  changePageId: (pageId: number) => void
+  changePageId: (pageId: number) => void,
+  saveAnswers: (pageId: number, answers: Answers) => void
 }
 
-export const RadioControl = ({choices, pageId, changePageId}: RadioProps) => {
+export const RadioControl = ({choices, pageId, changePageId, saveAnswers}: RadioProps) => {
     // 選択中のラジオボタンvalue
     const [selected, setSelected] = useState("")
 
     // ラジオボタン切り替えイベント
     const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
       setSelected(event.target.value)
+      saveAnswers(pageId, event.target.value)
       RadioChangeAction()
     }
 
@@ -42,7 +44,8 @@ export const RadioControl = ({choices, pageId, changePageId}: RadioProps) => {
                           id={choice.value}
                           type="radio"
                           className="hidden"
-                          value={choice.value} checked={choice.value === selected} onChange={changeValue}/>
+                          value={choice.value} checked={choice.value === selected}
+                          onChange={changeValue}/>
                         <label
                           htmlFor={choice.value}
                           className="flex flex-col w-full max-w-lg mx-auto text-center border-2 rounded-xl border-blue-400 p-2 my-4 hover:bg-blue-200 transition-all">

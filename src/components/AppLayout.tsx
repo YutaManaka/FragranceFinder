@@ -37,7 +37,6 @@ export const AppLayout = (): JSX.Element => {
   // 選択肢を選んだ際に回答を保存する
   const saveAnswers = (pageId: number, answer: string) => {
     ANSWERS[pageId] = answer
-    console.log(ANSWERS)
   }
   return (
     <>
@@ -75,7 +74,8 @@ export const AppLayout = (): JSX.Element => {
                   <RadioControl
                     choices={getChoices(pageId)}
                     pageId={pageId}
-                    changePageId={changePageId} />
+                    changePageId={changePageId}
+                    saveAnswers={saveAnswers} />
                 }
               </div>
             </div>
