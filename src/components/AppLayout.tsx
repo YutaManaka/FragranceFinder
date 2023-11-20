@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Answer, PAGES } from "../constants"
+import { Choice, PAGES } from "../constants"
 import { BlueButton } from "./BlueButton"
 import { RadioControl } from "./RadioControl"
 
@@ -19,7 +19,7 @@ export const AppLayout = (): JSX.Element => {
   const changeImagePath = (pageId: number): string => `./${pageId}.jpeg`
 
   // 解答欄を切り替える
-  const getAnswers = (pageId: number): Answer[] => {
+  const getChoices = (pageId: number): Choice[] => {
     return getProperty(PAGES, pageId).answers
   }
 
@@ -62,7 +62,7 @@ export const AppLayout = (): JSX.Element => {
                 }
                 {pageId === 1 &&
                   <RadioControl
-                    answers={getAnswers(pageId)}/>
+                    choices={getChoices(pageId)}/>
                 }
               </div>
             </div>

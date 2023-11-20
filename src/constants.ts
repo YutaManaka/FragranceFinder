@@ -1,5 +1,5 @@
 /** ラジオボタン設定 */
-interface Answer {
+interface Choice {
     label: string
     value: string
 }
@@ -11,7 +11,7 @@ interface Page {
 type Pages = {
     [key: number]: Page
 }
-export type {Answer}
+export type {Choice}
 export const PAGES: Pages = {
     0: {
         pageId: 0,

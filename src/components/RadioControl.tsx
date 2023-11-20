@@ -1,11 +1,11 @@
 import React, { useState } from "react"
-import { Answer } from "../constants"
+import { Choice } from "../constants"
 
 type RadioProps = {
-  answers: Answer[],
+  choices: Choice[],
 }
 
-export const RadioControl = ({answers}: RadioProps) => {
+export const RadioControl = ({choices}: RadioProps) => {
     /** 選択中のラジオボタンvalue */
     const [selected, setSelected] = useState("")
     /** ラジオボタン切り替えイベント */
@@ -14,21 +14,21 @@ export const RadioControl = ({answers}: RadioProps) => {
     return (
         <div className="container form-check">
             <div className="row">
-            {answers.map(answer => {
+            {choices.map(choice => {
                 return (
                     <div
                       className="col-4"
-                      key={answer.value}>
+                      key={choice.value}>
                         {/* checked属性に式を定義する */}
                         <input
-                          id={answer.value}
+                          id={choice.value}
                           type="radio"
                           className="hidden"
-                          value={answer.value} checked={answer.value === selected} onChange={changeValue}/>
+                          value={choice.value} checked={choice.value === selected} onChange={changeValue}/>
                         <label
-                          htmlFor={answer.value}
+                          htmlFor={choice.value}
                           className="flex flex-col w-full max-w-lg mx-auto text-center border-2 rounded-xl border-blue-400 p-2 my-4 hover:bg-blue-200 transition-all">
-                            <span className="fs-6">{answer.label}</span>
+                            <span className="fs-6">{choice.label}</span>
                         </label>
                     </div>
                 )
