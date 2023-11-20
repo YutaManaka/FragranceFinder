@@ -20,7 +20,7 @@ export const AppLayout = (): JSX.Element => {
 
   // 解答欄を切り替える
   const getChoices = (pageId: number): Choice[] => {
-    return getProperty(PAGES, pageId).answers
+    return getProperty(PAGES, pageId).choices
   }
 
   // 青ボタンでpageIdを変更する
@@ -53,7 +53,6 @@ export const AppLayout = (): JSX.Element => {
             {/* 解答欄 */}
             <div className='flex justify-center items-center h-1/2'>
               <div>
-                
                 {pageId === 0 &&
                   <BlueButton
                     text={'診断を始める'}

@@ -6,7 +6,7 @@ interface Choice {
 interface Page {
     pageId: number
     question: string
-    answers: Answer[]
+    choices: Choice[]
 }
 type Pages = {
     [key: number]: Page
@@ -16,12 +16,12 @@ export const PAGES: Pages = {
     0: {
         pageId: 0,
         question: '',
-        answers: []
+        choices: []
     },
     1: {
         pageId: 1,
         question: '探しているのは？',
-        answers: [
+        choices: [
             {label: '女性用香水', value: 'female'},
             {label: '男性用香水', value: 'male'},
             {label: 'どちらでもよい', value: 'both'}

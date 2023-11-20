@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Choice } from "../constants"
 
 type RadioProps = {
@@ -6,13 +6,15 @@ type RadioProps = {
 }
 
 export const RadioControl = ({choices}: RadioProps) => {
-    /** 選択中のラジオボタンvalue */
+    // 選択中のラジオボタンvalue
     const [selected, setSelected] = useState("")
-    /** ラジオボタン切り替えイベント */
+    // ラジオボタン切り替えイベント
     const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => setSelected(event.target.value)
-
+    // 表示後、時間差でボタン押せるようにする
+    const [enabled, setEnabled] = useState(false)
+    useEffect(() => {setTimeout(() => {setEnabled(true)}, 1000)})
     return (
-        <div className="container form-check">
+        <div className={'container form-check ' + (enabled ? '' : 'pointer-events-none')}>
             <div className="row">
             {choices.map(choice => {
                 return (
