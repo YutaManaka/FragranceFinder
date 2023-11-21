@@ -40,8 +40,11 @@ export const PAGES: Pages = {
     },
     3: {
         pageId: 3,
-        question: '',
-        choices: []
+        question: 'ペットと暮らすなら',
+        choices: [
+            {label: '犬', value: 'dog'},
+            {label: '猫', value: 'cat'}
+        ]
     },
     4: {
         pageId: 4,
@@ -60,8 +63,11 @@ export const PAGES: Pages = {
     },
     7: {
         pageId: 7,
-        question: '',
-        choices: []
+        question: 'どれくらい香水に詳しい？',
+        choices: [
+            {label: '初心者', value: 'beginner'},
+            {label: '上級者', value: 'professional'}
+        ]
     },
     8: {
         pageId: 8,
