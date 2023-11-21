@@ -77,10 +77,45 @@ export const PAGES: Pages = {
             {label: '嫌い', value: 'dislike'}
         ]
     },
-    9: {
-        pageId: 9,
-        question: '',
-        choices: []
+    91: {
+        pageId: 91,
+        question: 'どの香りが好き？',
+        choices: [
+            {label: '花の香り', value: 'flower'},
+            {label: 'セクシーな香り', value: 'musk'},
+            {label: 'お菓子の香り', value: 'sweets'}
+        ]
+    },
+    92: {
+        pageId: 92,
+        question: 'どの香りが好き？',
+        choices: [
+            {label: '柑橘の香り', value: 'citrus'},
+            {label: 'フルーツの香り', value: 'fruity'},
+            {label: '石鹸の香り', value: 'soap'},
+            {label: '海の香り', value: 'marine'}
+
+        ]
+    },
+    93: {
+        pageId: 93,
+        question: 'どの香りが好き？',
+        choices: [
+            {label: '柑橘の香り', value: 'citrus'},
+            {label: '森林の香り', value: 'green'},
+            {label: '海の香り', value: 'marine'}
+
+        ]
+    },
+    94: {
+        pageId: 94,
+        question: 'どの香りが好き？',
+        choices: [
+            {label: '柑橘の香り', value: 'citrus'},
+            {label: 'フルーツの香り', value: 'fruity'},
+            {label: '石鹸の香り', value: 'soap'}
+
+        ]
     },
     10: {
         pageId: 10,
@@ -93,18 +128,4 @@ export const PAGES: Pages = {
         choices: []
     }
 }
-export const ANSWERS: Answers = {
-    1: '',
-    2: '',
-    3: '',
-    4: '',
-    51: '',
-    52: '',
-    61: '',
-    62: '',
-    7: '',
-    8: '',
-    9: '',
-    10: '',
-    11: ''
-}
+export const ANSWERS: Answers = {}
