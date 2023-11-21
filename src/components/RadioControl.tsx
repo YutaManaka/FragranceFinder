@@ -6,9 +6,10 @@ type RadioProps = {
   pageId: number,
   changePageId: (pageId: number) => void,
   saveAnswers: (pageId: number, answer: string) => void
+  saveFinalAnswer: (answer: string) => void
 }
 
-export const RadioControl = ({choices, pageId, changePageId, saveAnswers}: RadioProps) => {
+export const RadioControl = ({choices, pageId, changePageId, saveAnswers, saveFinalAnswer}: RadioProps) => {
     // 選択中のラジオボタンvalue
     const [selected, setSelected] = useState("")
 
@@ -16,6 +17,10 @@ export const RadioControl = ({choices, pageId, changePageId, saveAnswers}: Radio
     const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
       setSelected(event.target.value)
       saveAnswers(pageId, event.target.value)
+      const finalPageIds = [91,92,93,94,11]
+      if (finalPageIds.includes(pageId)) {
+        saveFinalAnswer(event.target.value)
+      }
       console.log(ANSWERS)
       RadioChangeAction(event.target.value)
     }
@@ -26,6 +31,22 @@ export const RadioControl = ({choices, pageId, changePageId, saveAnswers}: Radio
 
     // 選択後にpageIdを変更
     const RadioChangeAction = (value?: string) => {
+      let nextId = 0
+      if (value === 'like') {
+        nextId = 91
+      } else {
+        switch (ANSWERS[1]) {
+          case'both' :
+            nextId = 92
+            break
+          case'male' :
+            nextId = 93
+            break
+          case'female' :
+          nextId = 94
+          break
+        }
+      }
       switch (pageId) {
         case 1:
         case 7:
@@ -33,6 +54,9 @@ export const RadioControl = ({choices, pageId, changePageId, saveAnswers}: Radio
           break
         case 2:
           changePageId(value === 'match' ? 3 : 7)
+          break
+        case 8:
+          changePageId(nextId)
           break
         default:
           break

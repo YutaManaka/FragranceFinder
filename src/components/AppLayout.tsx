@@ -20,7 +20,7 @@ export const AppLayout = (): JSX.Element => {
 
   // radioの質問か判定する
   const isRadio = (pageId: number): boolean => {
-    const radioIds = [1,2,3,4,7,8,9,10,11]
+    const radioIds = [1,2,3,4,7,8,91,92,93,94,10,11]
     return radioIds.includes(pageId)
   }
 
@@ -37,6 +37,11 @@ export const AppLayout = (): JSX.Element => {
   // 選択肢を選んだ際に回答を保存する
   const saveAnswers = (pageId: number, answer: string) => {
     ANSWERS[pageId] = answer
+  }
+
+  // 最終回答を保存する
+  const saveFinalAnswer = (answer: string) => {
+    ANSWERS[999] = answer
   }
   return (
     <>
@@ -75,7 +80,8 @@ export const AppLayout = (): JSX.Element => {
                     choices={getChoices(pageId)}
                     pageId={pageId}
                     changePageId={changePageId}
-                    saveAnswers={saveAnswers} />
+                    saveAnswers={saveAnswers}
+                    saveFinalAnswer={saveFinalAnswer} />
                 }
               </div>
             </div>
