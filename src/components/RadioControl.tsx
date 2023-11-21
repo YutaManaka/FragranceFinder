@@ -28,7 +28,8 @@ export const RadioControl = ({choices, pageId, changePageId, saveAnswers}: Radio
     const RadioChangeAction = (value?: string) => {
       switch (pageId) {
         case 1:
-          changePageId(2)
+        case 7:
+          changePageId(pageId + 1)
           break
         case 2:
           changePageId(value === 'match' ? 3 : 7)

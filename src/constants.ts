@@ -71,8 +71,11 @@ export const PAGES: Pages = {
     },
     8: {
         pageId: 8,
-        question: '',
-        choices: []
+        question: '甘い香りは',
+        choices: [
+            {label: '好き', value: 'like'},
+            {label: '嫌い', value: 'dislike'}
+        ]
     },
     9: {
         pageId: 9,
