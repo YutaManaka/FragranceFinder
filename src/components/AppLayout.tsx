@@ -63,7 +63,7 @@ export const AppLayout = (): JSX.Element => {
             </div>
             {/* 解答欄 */}
             <div className='flex justify-center items-center h-1/2'>
-              <div>
+              <div className="w-2/3">
                 {pageId === 0 &&
                   <BlueButton
                     text={'診断を始める'}

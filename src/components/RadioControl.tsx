@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Choice } from "../constants"
+import { ANSWERS, Choice } from "../constants"
 
 type RadioProps = {
   choices: Choice[],
@@ -16,7 +16,8 @@ export const RadioControl = ({choices, pageId, changePageId, saveAnswers}: Radio
     const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
       setSelected(event.target.value)
       saveAnswers(pageId, event.target.value)
-      RadioChangeAction()
+      console.log(ANSWERS)
+      RadioChangeAction(event.target.value)
     }
 
     // 表示後、時間差でボタン押せるようにする
@@ -24,12 +25,18 @@ export const RadioControl = ({choices, pageId, changePageId, saveAnswers}: Radio
     useEffect(() => {setTimeout(() => {setEnabled(true)}, 1000)})
 
     // 選択後にpageIdを変更
-    const RadioChangeAction = () => {
-      if (pageId === 1) {
-        changePageId(2)
-      } else {
-        console.log('1じゃないよ')
+    const RadioChangeAction = (value?: string) => {
+      switch (pageId) {
+        case 1:
+          changePageId(2)
+          break
+        case 2:
+          changePageId(value === 'match' ? 3 : 7)
+          break
+        default:
+          break
       }
+
     }
     return (
         <div className={'container form-check ' + (enabled ? '' : 'pointer-events-none')}>
@@ -48,7 +55,7 @@ export const RadioControl = ({choices, pageId, changePageId, saveAnswers}: Radio
                           onChange={changeValue}/>
                         <label
                           htmlFor={choice.value}
-                          className="flex flex-col w-full max-w-lg mx-auto text-center border-2 rounded-xl border-blue-400 p-2 my-4 hover:bg-blue-200 transition-all">
+                          className="flex flex-col min-w-0 w-full max-w-lg mx-auto text-center border-2 rounded-xl border-blue-400 p-2 my-4 hover:bg-blue-200 transition-all">
                             <span className="fs-6">{choice.label}</span>
                         </label>
                     </div>
