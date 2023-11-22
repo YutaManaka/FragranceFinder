@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { ANSWERS, Choice } from "../constants"
+import { ANSWERS, ANSWER_IDS, Choice } from "../constants"
 
 type RadioProps = {
   choices: Choice[],
@@ -57,6 +57,12 @@ export const RadioControl = ({choices, pageId, changePageId, saveAnswers, saveFi
           break
         case 8:
           changePageId(nextId)
+          break
+        case 91:
+        case 92:
+        case 93:
+        case 94:
+          changePageId(ANSWER_IDS[ANSWERS[999]])
           break
         default:
           break
