@@ -2,14 +2,32 @@ import { useState } from "react"
 import { Choice, PAGES, ANSWERS } from "../constants"
 import { BlueButton } from "./BlueButton"
 import { RadioControl } from "./RadioControl"
+import { ResultText } from "./ResultText"
 
 export const AppLayout = (): JSX.Element => {
   const [pageId, setPageId] = useState(0)
 
-  // 質問文を切り替える
+  // 質問のページか判定する
+  const isResult = (pageId: number) => {
+    return String(pageId).startsWith('99')
+  }
   function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
     return obj[key];
   }
+
+  // 結果のタイトルを切り替える
+  const changeResult = (pageId: number): string => {
+    const key: keyof typeof PAGES = pageId
+    return getProperty(PAGES, key).result
+  }
+
+  // 結果のurlを切り替える
+  const changeUrl = (pageId: number): string => {
+    const key: keyof typeof PAGES = pageId
+    return getProperty(PAGES, key).url
+  }
+
+  // 質問文を切り替える
   const changeQuestionText = (pageId: number): string => {
     const key: keyof typeof PAGES = pageId
     return getProperty(PAGES, key).question
@@ -17,6 +35,12 @@ export const AppLayout = (): JSX.Element => {
 
   // 画像を切り替える
   const changeImagePath = (pageId: number): string => `./${pageId}.jpeg`
+
+  // 結果の文章を切り替える
+  const changeText = (pageId: number): string => {
+    const key: keyof typeof PAGES = pageId
+    return getProperty(PAGES, key).text
+  }
 
   // radioの質問か判定する
   const isRadio = (pageId: number): boolean => {
@@ -41,7 +65,7 @@ export const AppLayout = (): JSX.Element => {
 
   // 最終回答を保存する
   const saveFinalAnswer = (answer: string) => {
-    ANSWERS[999] = answer
+    ANSWERS[999] = `${answer}_${ANSWERS[1]}`
   }
   return (
     <>
@@ -58,9 +82,26 @@ export const AppLayout = (): JSX.Element => {
         <div className='bg-gray-100 py-5 h-5/6'>
           <div className='bg-white mx-10 h-full'>
             {/* 質問文 */}
-            <div className='text-2xl font-bold flex justify-center items-center h-20'>
-              {changeQuestionText(pageId)}
-            </div>
+            {isResult(pageId)
+              // 結果ページ
+              ?<div className="flex items-center h-20">
+                <div>
+                  <div>あなたにぴったりの香水は</div>
+                  <div>
+                    <span className="font-bold">
+                      {changeResult(pageId)}
+                    </span>
+                    <span>
+                      です。
+                    </span>
+                  </div>
+                </div>
+              </div>
+              // 質問ページ
+              :<div className='text-2xl font-bold flex justify-center items-center h-20'>
+                {changeQuestionText(pageId)}
+              </div>
+            }
             {/* 画像 */}
             <div className='flex justify-center px-4'>
               {/* <img src="./0.jpeg" /> */}
@@ -68,22 +109,31 @@ export const AppLayout = (): JSX.Element => {
             </div>
             {/* 解答欄 */}
             <div className='flex justify-center items-center h-1/2'>
-              <div className="w-2/3">
-                {pageId === 0 &&
-                  <BlueButton
-                    text={'診断を始める'}
-                    pageId={pageId}
-                    changePageId={changePageId} />
-                }
-                {isRadio(pageId) &&
-                  <RadioControl
-                    choices={getChoices(pageId)}
-                    pageId={pageId}
-                    changePageId={changePageId}
-                    saveAnswers={saveAnswers}
-                    saveFinalAnswer={saveFinalAnswer} />
-                }
-              </div>
+              {isResult(pageId)
+                // 結果ページ
+                ?<ResultText
+                  text={changeText(pageId)}
+                  imgUrl={changeImagePath(pageId)}
+                  result={changeResult(pageId)}
+                  url={changeUrl(pageId)} />
+                // 質問ページ
+                :<div className="w-2/3">
+                  {pageId === 0 &&
+                    <BlueButton
+                      text={'診断を始める'}
+                      pageId={pageId}
+                      changePageId={changePageId} />
+                  }
+                  {isRadio(pageId) &&
+                    <RadioControl
+                      choices={getChoices(pageId)}
+                      pageId={pageId}
+                      changePageId={changePageId}
+                      saveAnswers={saveAnswers}
+                      saveFinalAnswer={saveFinalAnswer} />
+                  }
+                </div>
+              }
             </div>
             {/* 進捗表示 */}
             <div>0/0</div>
