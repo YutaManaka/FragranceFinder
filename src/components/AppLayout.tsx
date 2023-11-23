@@ -44,7 +44,7 @@ export const AppLayout = (): JSX.Element => {
 
   // radioの質問か判定する
   const isRadio = (pageId: number): boolean => {
-    const radioIds = [1,2,3,4,7,8,91,92,93,94,10,11]
+    const radioIds = [1,2,3,4,7,8,91,92,93,94,10,111,112,113,114,115,116]
     return radioIds.includes(pageId)
   }
 

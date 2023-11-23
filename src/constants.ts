@@ -161,16 +161,84 @@ export const PAGES: Pages = {
     },
     10: {
         pageId: 10,
-        question: '',
-        choices: [],
+        question: 'どんな香りが好き？',
+        choices: [
+            {label: '爽やかな香り', value: 'fresh'},
+            {label: '濃厚な香り', value: 'rich'},
+            {label: 'どちらでもない', value: 'middle'}
+        ],
         result: '',
         text: '',
         url: ''
     },
-    11: {
-        pageId: 11,
-        question: '',
-        choices: [],
+    111: {
+        pageId: 111,
+        question: 'どの香りが好き？',
+        choices: [
+            {label: 'シトラス', value: 'citrus'},
+            {label: 'ティー(紅茶)', value: 'tea'},
+            {label: 'グリーン', value: 'green'},
+            {label: 'ミント', value: 'mint'}
+        ],
+        result: '',
+        text: '',
+        url: ''
+    },
+    112: {
+        pageId: 112,
+        question: 'どの香りが好き？',
+        choices: [
+            {label: 'シトラス', value: 'citrus'},
+            {label: 'ティー(紅茶)', value: 'tea'}
+        ],
+        result: '',
+        text: '',
+        url: ''
+    },
+    113: {
+        pageId: 113,
+        question: 'どの香りが好き？',
+        choices: [
+            {label: 'フローラル', value: 'floral'},
+            {label: 'マリン', value: 'marine'}
+        ],
+        result: '',
+        text: '',
+        url: ''
+    },
+    114: {
+        pageId: 114,
+        question: 'どの香りが好き？',
+        choices: [
+            {label: 'フルーティー', value: 'fruity'},
+            {label: 'フローラル', value: 'floral'},
+            {label: '石鹸', value: 'soap'}
+        ],
+        result: '',
+        text: '',
+        url: ''
+    },
+    115: {
+        pageId: 115,
+        question: 'どの香りが好き？',
+        choices: [
+            {label: 'フルーティー', value: 'fruity'},
+            {label: 'フローラル', value: 'floral'},
+            {label: 'マリン', value: 'marine'},
+            {label: '石鹸', value: 'soap'}
+        ],
+        result: '',
+        text: '',
+        url: ''
+    },
+    116: {
+        pageId: 116,
+        question: 'どの香りが好き？',
+        choices: [
+            {label: 'ウッディー', value: 'woody'},
+            {label: 'ムスク', value: 'musk'},
+            {label: 'バニラ', value: 'vanilla'}
+        ],
         result: '',
         text: '',
         url: ''
@@ -179,16 +247,16 @@ export const PAGES: Pages = {
         pageId: 9901,
         question: '',
         choices: [],
-        result: '「柑橘(シトラス)系メンズ香水」',
-        text: '柑橘(シトラス)系とは、レモンやグレープフルーツなどの香りです。/甘さが控えめで軽やかな印象であることが特徴です。',
+        result: '「シトラス系メンズ香水」',
+        text: 'シトラス系とは、レモンやグレープフルーツなどの柑橘の香りです。/甘さが控えめで軽やかな印象であることが特徴です。',
         url: 'citrus-mens-perfume-genealogy/'
     },
     9902: {
         pageId: 9902,
         question: '',
         choices: [],
-        result: '「柑橘(シトラス)系レディース香水」',
-        text: '柑橘(シトラス)系とは、レモンやオレンジなどの柑橘系の果物が持つ、爽やかでフレッシュな香りのことです。/濃厚になりにくいため、香水が初めての人にも使いこなしやすいのが特徴です。',
+        result: '「シトラス系レディース香水」',
+        text: 'シトラス系とは、レモンやオレンジなどの柑橘の香りです。/爽やかな香りで、香水初心者でも使いこなしやすいのが特徴です。',
         url: 'citrus-ladies-perfume-genealogy/'
     },
     9903: {
@@ -196,15 +264,15 @@ export const PAGES: Pages = {
         question: '',
         choices: [],
         result: '「紅茶系メンズ香水」',
-        text: '紅茶系の香りを作る上でメジャーなのは「ベルガモット+ジャスミン」の組み合わせです。/上品なかおりで、大人っぽく落ち着いた印象を演出できます。',
+        text: '紅茶系の香りとは「ベルガモット+ジャスミン」の組み合わせです。/上品な香りで、大人っぽく落ち着いた印象を演出できます。',
         url: 'tea-mens-perfume-genealogy/'
     },
     9904: {
         pageId: 9904,
         question: '',
         choices: [],
-        result: '「グリーンティー系レディース香水」',
-        text: '香りの世界でグリーンティー(緑茶)の香りは、「西洋人がイメージする、東洋の神秘的な香り」と言われています。/その爽やかな香りは今でも万人ウケする香りとして好評です。',
+        result: '「ティー系レディース香水」',
+        text: 'グリーンティーの香りは、「東洋の神秘的な香り」と言われています。/その爽やかな香りは今でも万人ウケする香りとして好評です。',
         url: 'greentea-ladies-perfume-genealogy/'
     },
     9905: {
@@ -212,15 +280,15 @@ export const PAGES: Pages = {
         question: '',
         choices: [],
         result: '「グリーン系メンズ香水」',
-        text: 'グリーン系の香りは、植物の力強さを感じる甘さ控えめの香りです。/落ち着いた穏やかさの演出のほか、清潔感のあるクールな印象に仕上げたい時に向いた香りです。',
+        text: 'グリーン系の香りは、植物の力強さを感じる甘さ控えめの香りです。/清潔感のあるクールな印象に仕上げたい時に向いた香りです。',
         url: 'green-mens-perfume-genealogy/'
     },
     9906: {
         pageId: 9906,
         question: '',
         choices: [],
-        result: '「フルーティー系レディース香水」',
-        text: 'フルーティー系(フルーツ系)は、果物の甘さと酸味、みずみずしさが楽しめる香りを指します。/ジューシーで爽やかな甘さがあり、明るさや可愛らしさ、親しみやすさを演出したい時に向いています。',
+        result: '「フルーティー系香水」',
+        text: 'フルーティー系の香りは、果物の甘さと酸味が楽しめる香りです。/明るさや可愛らしさ、親しみ易さを演出したい時に向いています。',
         url: 'fruity-ladies-perfume-genealogy/'
     },
     9907: {
@@ -228,7 +296,7 @@ export const PAGES: Pages = {
         question: '',
         choices: [],
         result: '「ミント系メンズ香水」',
-        text: 'ミント系の香りは、メントールのクールで涼しげな香りが特徴です。/香りがすっきりしていて優しく、初心者におすすめの香水が多いので要チェックですよ。',
+        text: 'ミント系の香りは、メントールのクールで涼しげな香りが特徴です。/優しくすっきりした香りのため、初心者におすすめです。',
         url: 'mint-mens-perfume-genealogy/'
     },
     9908: {
@@ -236,7 +304,7 @@ export const PAGES: Pages = {
         question: '',
         choices: [],
         result: '「フローラル系メンズ香水」',
-        text: 'フローラル系とは花の香りのことで、爽やかさと甘さのバランスが良いのが特徴です。/穏やかさや優しさをアピールしやすい香りが多いです。',
+        text: 'フローラル系は、爽やかさと甘さのバランスが良いのが特徴です。/穏やかさや優しさをアピールしやすい香りが多いです。',
         url: 'floral-mens-perfume-genealogy/'
     },
     9909: {
@@ -244,7 +312,7 @@ export const PAGES: Pages = {
         question: '',
         choices: [],
         result: '「フローラル系レディース香水」',
-        text: 'フローラル系は、爽やかさとコクのある甘さのバランスで構成される、香りの王道です。/品の良さや優雅さを醸し出したい時や、幸せな気分に浸りたい時に特におすすめしたい香りです。',
+        text: 'フローラル系は、爽やかさと甘さのバランスが良い香りの王道です。/幸せな気分に浸りたい時に特におすすめしたい香りです。',
         url: 'floral-ladies-perfume-genealogy/'
     },
     9910: {
@@ -252,7 +320,7 @@ export const PAGES: Pages = {
         question: '',
         choices: [],
         result: '「石鹸系レディース香水」',
-        text: '石鹸を思わせる清潔感のある香りは、フレッシュでイキイキとしたイメージを演出してくれます。/香水が初めての人にもおすすめの香りです。',
+        text: '石鹸の香りは清潔感があり、フレッシュなイメージを演出できます。/香水が初めての人にもおすすめの香りです。',
         url: 'savon-ladies-perfume-genealogy/'
     },
     9911: {
@@ -260,7 +328,7 @@ export const PAGES: Pages = {
         question: '',
         choices: [],
         result: '「マリン系メンズ香水」',
-        text: 'マリン系の香りは、海をイメージしたみずみずしくてフレッシュな匂いが特徴です。/おおらかな雰囲気を醸し出したい時や、こなれた印象に仕上げたい時に向いています。',
+        text: 'マリン系の香りは、みずみずしくてフレッシュな香りが特徴です。/ゆったりした雰囲気を醸し出したい時に向いています。',
         url: 'marine-mens-perfume-genealogy/'
     },
     9912: {
@@ -268,7 +336,7 @@ export const PAGES: Pages = {
         question: '',
         choices: [],
         result: '「ウッディー系メンズ香水」',
-        text: 'ウッディー系の香りは、木や森を思わせる、ナチュラルなイメージの匂いが特徴です。/大人っぽさを演出したい時や、知的な印象に見せたいシーンで特におすすめです。',
+        text: 'ウッディー系の香りは、木や森を思わせる、ナチュラルな香りです。/大人っぽさを演出したい時に特におすすめです。',
         url: 'woody-mens-perfume-genealogy/'
     },
     9913: {
@@ -300,7 +368,7 @@ export const PAGES: Pages = {
         question: '',
         choices: [],
         result: '「バニラ系メンズ香水」',
-        text: 'バニラ系の香りは、暖かみを感じられる深い甘さが特徴です。/ダンディで包容力のある大人っぽさを演出するのに一役買ってくれますよ。',
+        text: 'バニラ系の香りは、暖かみを感じられる深い甘さが特徴です。/ダンディで包容力のある大人っぽさを演出するのにおすすめです。',
         url: 'vanilla-mens-perfume-genealogy/'
     },
     9917: {
@@ -308,7 +376,7 @@ export const PAGES: Pages = {
         question: '',
         choices: [],
         result: '「バニラ系レディース香水」',
-        text: 'バニラ系の香水は甘く、温かみのある香りが特徴です。/近年では、甘さを前面に出したバニラ系香水が出てきており、注目です。',
+        text: 'バニラ系の香水は甘く、温かみのある香りが特徴です。/近年は、甘さを前面に出した香水が流行しており、注目です。',
         url: 'vanilla-ladies-perfume-genealogy/'
     }
 }
