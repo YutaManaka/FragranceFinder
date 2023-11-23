@@ -1,3 +1,5 @@
+import { ANSWERS } from "../constants"
+
 type BlueButtonProps = {
   text: string,
   pageId: number,
@@ -6,9 +8,12 @@ type BlueButtonProps = {
 export const BlueButton = ({text, pageId, changePageId}: BlueButtonProps): JSX.Element => {
   const ButtonClickAction = () => {
     if (pageId === 0) {
+      // 初期画面の「診断を始める」ボタン
       changePageId(1)
     } else {
-      console.log('0じゃないよ')
+      // 結果画面の「最初から診断する」ボタン
+      Object.keys(ANSWERS).forEach(key => delete ANSWERS[Number(key)]) // 結果リセット
+      changePageId(0) // 初期画面に遷移
     }
   }
   return (

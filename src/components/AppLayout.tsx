@@ -79,12 +79,12 @@ export const AppLayout = (): JSX.Element => {
           </header>
         </div>
         {/* コンテンツ */}
-        <div className='bg-gray-100 py-5 h-5/6'>
-          <div className='bg-white mx-10 h-full'>
+        <div className='bg-gray-100 py-5 h-5/6 min-h-max'>
+          <div className='bg-white mx-10 h-max min-h-full'>
             {/* 質問文 */}
             {isResult(pageId)
               // 結果ページ
-              ?<div className="flex items-center h-20">
+              ?<div className="flex justify-center items-center h-20">
                 <div>
                   <div>あなたにぴったりの香水は</div>
                   <div>
@@ -108,21 +108,25 @@ export const AppLayout = (): JSX.Element => {
               <img src={changeImagePath(pageId)} />
             </div>
             {/* 解答欄 */}
-            <div className='flex justify-center items-center h-1/2'>
+            <div className='flex justify-center items-center h-2/3'>
               {isResult(pageId)
                 // 結果ページ
                 ?<ResultText
                   text={changeText(pageId)}
                   imgUrl={changeImagePath(pageId)}
                   result={changeResult(pageId)}
-                  url={changeUrl(pageId)} />
+                  url={changeUrl(pageId)}
+                  pageId={pageId}
+                  changePageId={changePageId} />
                 // 質問ページ
                 :<div className="w-2/3">
                   {pageId === 0 &&
-                    <BlueButton
-                      text={'診断を始める'}
-                      pageId={pageId}
-                      changePageId={changePageId} />
+                  <div className="py-28">
+                      <BlueButton
+                        text={'診断を始める'}
+                        pageId={pageId}
+                        changePageId={changePageId} />
+                      </div>
                   }
                   {isRadio(pageId) &&
                     <RadioControl
@@ -136,7 +140,9 @@ export const AppLayout = (): JSX.Element => {
               }
             </div>
             {/* 進捗表示 */}
-            <div>0/0</div>
+            {!isResult(pageId) &&
+              <div>0/0</div>
+            }
           </div>
         </div>
         {/* フッター */}
