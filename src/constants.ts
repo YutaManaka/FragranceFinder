@@ -184,132 +184,132 @@ export const PAGES: Pages = {
         url: 'citrus-mens-perfume-genealogy/'
     },
     9902: {
-        pageId: 9,
+        pageId: 9902,
         question: '',
         choices: [],
-        result: '',
-        text: '',
-        url: ''
+        result: '「柑橘(シトラス)系レディース香水」',
+        text: '柑橘(シトラス)系とは、レモンやオレンジなどの柑橘系の果物が持つ、爽やかでフレッシュな香りのことです。/濃厚になりにくいため、香水が初めての人にも使いこなしやすいのが特徴です。',
+        url: 'citrus-ladies-perfume-genealogy/'
     },
     9903: {
-        pageId: 9,
+        pageId: 9903,
         question: '',
         choices: [],
-        result: '',
-        text: '',
-        url: ''
+        result: '「紅茶系メンズ香水」',
+        text: '紅茶系の香りを作る上でメジャーなのは「ベルガモット+ジャスミン」の組み合わせです。/上品なかおりで、大人っぽく落ち着いた印象を演出できます。',
+        url: 'tea-mens-perfume-genealogy/'
     },
     9904: {
-        pageId: 9,
+        pageId: 9904,
         question: '',
         choices: [],
-        result: '',
-        text: '',
-        url: ''
+        result: '「グリーンティー系レディース香水」',
+        text: '香りの世界でグリーンティー(緑茶)の香りは、「西洋人がイメージする、東洋の神秘的な香り」と言われています。/その爽やかな香りは今でも万人ウケする香りとして好評です。',
+        url: 'greentea-ladies-perfume-genealogy/'
     },
-    905: {
-        pageId: 9,
+    9905: {
+        pageId: 9905,
         question: '',
         choices: [],
-        result: '',
-        text: '',
-        url: ''
+        result: '「グリーン系メンズ香水」',
+        text: 'グリーン系の香りは、植物の力強さを感じる甘さ控えめの香りです。/落ち着いた穏やかさの演出のほか、清潔感のあるクールな印象に仕上げたい時に向いた香りです。',
+        url: 'green-mens-perfume-genealogy/'
     },
-    906: {
-        pageId: 9,
+    9906: {
+        pageId: 9906,
         question: '',
         choices: [],
-        result: '',
-        text: '',
-        url: ''
+        result: '「フルーティー系レディース香水」',
+        text: 'フルーティー系(フルーツ系)は、果物の甘さと酸味、みずみずしさが楽しめる香りを指します。/ジューシーで爽やかな甘さがあり、明るさや可愛らしさ、親しみやすさを演出したい時に向いています。',
+        url: 'fruity-ladies-perfume-genealogy/'
     },
-    907: {
-        pageId: 9,
+    9907: {
+        pageId: 9907,
         question: '',
         choices: [],
-        result: '',
-        text: '',
-        url: ''
+        result: '「ミント系メンズ香水」',
+        text: 'ミント系の香りは、メントールのクールで涼しげな香りが特徴です。/香りがすっきりしていて優しく、初心者におすすめの香水が多いので要チェックですよ。',
+        url: 'mint-mens-perfume-genealogy/'
     },
-    908: {
-        pageId: 9,
+    9908: {
+        pageId: 9908,
         question: '',
         choices: [],
-        result: '',
-        text: '',
-        url: ''
+        result: '「フローラル系メンズ香水」',
+        text: 'フローラル系とは花の香りのことで、爽やかさと甘さのバランスが良いのが特徴です。/穏やかさや優しさをアピールしやすい香りが多いです。',
+        url: 'floral-mens-perfume-genealogy/'
     },
-    909: {
-        pageId: 9,
+    9909: {
+        pageId: 9909,
         question: '',
         choices: [],
-        result: '',
-        text: '',
-        url: ''
+        result: '「フローラル系レディース香水」',
+        text: 'フローラル系は、爽やかさとコクのある甘さのバランスで構成される、香りの王道です。/品の良さや優雅さを醸し出したい時や、幸せな気分に浸りたい時に特におすすめしたい香りです。',
+        url: 'floral-ladies-perfume-genealogy/'
     },
-    910: {
-        pageId: 9,
+    9910: {
+        pageId: 9910,
         question: '',
         choices: [],
-        result: '',
-        text: '',
-        url: ''
+        result: '「石鹸系レディース香水」',
+        text: '石鹸を思わせる清潔感のある香りは、フレッシュでイキイキとしたイメージを演出してくれます。/香水が初めての人にもおすすめの香りです。',
+        url: 'savon-ladies-perfume-genealogy/'
     },
-    911: {
-        pageId: 9,
+    9911: {
+        pageId: 9911,
         question: '',
         choices: [],
-        result: '',
-        text: '',
-        url: ''
+        result: '「マリン系メンズ香水」',
+        text: 'マリン系の香りは、海をイメージしたみずみずしくてフレッシュな匂いが特徴です。/おおらかな雰囲気を醸し出したい時や、こなれた印象に仕上げたい時に向いています。',
+        url: 'marine-mens-perfume-genealogy/'
     },
-    912: {
-        pageId: 9,
+    9912: {
+        pageId: 9912,
         question: '',
         choices: [],
-        result: '',
-        text: '',
-        url: ''
+        result: '「ウッディー系メンズ香水」',
+        text: 'ウッディー系の香りは、木や森を思わせる、ナチュラルなイメージの匂いが特徴です。/大人っぽさを演出したい時や、知的な印象に見せたいシーンで特におすすめです。',
+        url: 'woody-mens-perfume-genealogy/'
     },
-    913: {
-        pageId: 9,
+    9913: {
+        pageId: 9913,
         question: '',
         choices: [],
-        result: '',
-        text: '',
-        url: ''
+        result: '「ウッディー系レディース香水」',
+        text: 'ウッディー系の香水は、木や森を思わせる落ち着いた匂いが特徴です。/知性やクールさ、ナチュラルなイメージをまといたい時に向いているものが多いです。',
+        url: 'woody-ladies-perfume-genealogy/'
     },
-    914: {
-        pageId: 9,
+    9914: {
+        pageId: 9914,
         question: '',
         choices: [],
-        result: '',
-        text: '',
-        url: ''
+        result: '「ムスク系メンズ香水」',
+        text: 'ムスク系の香水は、コクと温かみを感じられる香りが特徴です。/現在は清潔感のある「ホワイトムスク」系の香りがにトレンドです。',
+        url: 'musk-mens-perfume-genealogy/'
     },
-    915: {
-        pageId: 9,
+    9915: {
+        pageId: 9915,
         question: '',
         choices: [],
-        result: '',
-        text: '',
-        url: ''
+        result: '「ムスク系レディース香水」',
+        text: 'ムスク系の香水は、コクと温かみを感じられる香りが特徴です。/大人っぽさやセクシーなイメージをまといたい時におすすめです。',
+        url: 'musk-ladies-perfume-genealogy/'
     },
-    916: {
-        pageId: 9,
+    9916: {
+        pageId: 9916,
         question: '',
         choices: [],
-        result: '',
-        text: '',
-        url: ''
+        result: '「バニラ系メンズ香水」',
+        text: 'バニラ系の香りは、暖かみを感じられる深い甘さが特徴です。/ダンディで包容力のある大人っぽさを演出するのに一役買ってくれますよ。',
+        url: 'vanilla-mens-perfume-genealogy/'
     },
-    917: {
-        pageId: 9,
+    9917: {
+        pageId: 9917,
         question: '',
         choices: [],
-        result: '',
-        text: '',
-        url: ''
+        result: '「バニラ系レディース香水」',
+        text: 'バニラ系の香水は甘く、温かみのある香りが特徴です。/近年では、甘さを前面に出したバニラ系香水が出てきており、注目です。',
+        url: 'vanilla-ladies-perfume-genealogy/'
     }
 }
 export const ANSWERS: Answers = {}
@@ -317,4 +317,29 @@ export const ANSWER_IDS: AnswerPageIds = {
     citrus_male: 9901,
     citrus_female: 9902,
     citrus_both: 9902,
+    tea_male: 9903,
+    tea_female: 9904,
+    tea_both: 9904,
+    green_male: 9905,
+    green_both: 9905,
+    fruity_female: 9906,
+    fruity_both: 9906,
+    mint_male: 9907,
+    mint_both: 9907,
+    floral_male: 9908,
+    floral_female: 9909,
+    floral_both: 9909,
+    savon_female: 9910,
+    savon_both: 9910,
+    marine_male: 9911,
+    marine_both: 9911,
+    woody_male: 9912,
+    woody_female: 9913,
+    woody_both: 9913,
+    musk_male: 9914,
+    musk_female: 9915,
+    musk_both: 9915,
+    vanilla_male: 9916,
+    vanilla_female: 9917,
+    vanilla_both: 9917
 }
