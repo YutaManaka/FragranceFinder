@@ -114,9 +114,9 @@ export const PAGES: Pages = {
         pageId: 91,
         question: 'どの香りが好き？',
         choices: [
-            {label: '花の香り', value: 'flower'},
+            {label: '花の香り', value: 'floral'},
             {label: 'セクシーな香り', value: 'musk'},
-            {label: 'お菓子の香り', value: 'sweets'}
+            {label: 'お菓子の香り', value: 'vanilla'}
         ],
         result: '',
         text: '',
@@ -329,8 +329,8 @@ export const ANSWER_IDS: AnswerPageIds = {
     floral_male: 9908,
     floral_female: 9909,
     floral_both: 9909,
-    savon_female: 9910,
-    savon_both: 9910,
+    soap_female: 9910,
+    soap_both: 9910,
     marine_male: 9911,
     marine_both: 9911,
     woody_male: 9912,
