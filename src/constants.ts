@@ -66,8 +66,11 @@ export const PAGES: Pages = {
     },
     4: {
         pageId: 4,
-        question: '',
-        choices: [],
+        question: '香りと合わせたいのは？',
+        choices: [
+            {label: 'ファッション', value: 'fashion'},
+            {label: '気分', value: 'mood'}
+        ],
         result: '',
         text: '',
         url: ''
