@@ -75,18 +75,50 @@ export const PAGES: Pages = {
         text: '',
         url: ''
     },
-    5: {
-        pageId: 5,
-        question: '',
-        choices: [],
+    51: {
+        pageId: 51,
+        question: '好きな服の系統は？',
+        choices: [
+            {label: 'クール', value: 'cool'},
+            {label: 'どちらでもない', value: 'middle'},
+            {label: '優しい', value: 'gentle'}
+        ],
         result: '',
         text: '',
         url: ''
     },
-    6: {
-        pageId: 0,
-        question: '',
-        choices: [],
+    52: {
+        pageId: 52,
+        question: '好きな服の系統は？',
+        choices: [
+            {label: 'カジュアル', value: 'casual'},
+            {label: 'どちらでもない', value: 'middle'},
+            {label: 'フォーマル', value: 'formal'}
+        ],
+        result: '',
+        text: '',
+        url: ''
+    },
+    61: {
+        pageId: 61,
+        question: 'どんな気分？',
+        choices: [
+            {label: '知的', value: 'intelligent'},
+            {label: 'どちらでもない', value: 'middle'},
+            {label: '優しい', value: 'kind'}
+        ],
+        result: '',
+        text: '',
+        url: ''
+    },
+    62: {
+        pageId: 62,
+        question: 'どんな気分？',
+        choices: [
+            {label: '爽やか', value: 'active'},
+            {label: 'どちらでもない', value: 'middle'},
+            {label: '落ち着きがある', value: 'calm'}
+        ],
         result: '',
         text: '',
         url: ''
@@ -412,5 +444,56 @@ export const ANSWER_IDS: AnswerPageIds = {
     musk_both: 9915,
     vanilla_male: 9916,
     vanilla_female: 9917,
-    vanilla_both: 9917
+    vanilla_both: 9917,
+    cool_casual_male: 9901,
+    cool_casual_female: 9902,
+    cool_casual_both: 9902,
+    cool_middle_male: 9905,
+    cool_middle_female: 9902,
+    cool_middle_both: 9902,
+    cool_formal_male: 9912,
+    cool_formal_female: 9913,
+    cool_formal_both: 9913,
+    middle_casual_male: 9903,
+    middle_casual_female: 9904,
+    middle_casual_both: 9904,
+    middle_middle_male: 9908,
+    middle_middle_female: 9909,
+    middle_middle_both: 9909,
+    middle_formal_male: 9914,
+    middle_formal_female: 9915,
+    middle_formal_both: 9915,
+    gentle_casual_male: 9907,
+    gentle_casual_female: 9906,
+    gentle_casual_both: 9906,
+    gentle_middle_male: 9911,
+    gentle_middle_female: 9910,
+    gentle_middle_both: 9910,
+    gentle_formal_male: 9916,
+    gentle_formal_female: 9917,
+    gentle_formal_both: 9917,
+    intelligent_active_male: 9901,
+    intelligent_active_female: 9902,
+    intelligent_active_both: 9902,
+    intelligent_middle_male: 9905,
+    intelligent_middle_female: 9902,
+    intelligent_middle_both: 9902,
+    intelligent_calm_male: 9912,
+    intelligent_calm_female: 9913,
+    intelligent_calm_both: 9913,
+    middle_active_male: 9903,
+    middle_active_female: 9904,
+    middle_active_both: 9904,
+    middle_calm_male: 9914,
+    middle_calm_female: 9915,
+    middle_calm_both: 9915,
+    kind_active_male: 9907,
+    kind_active_female: 9906,
+    kind_active_both: 9906,
+    kind_middle_male: 9911,
+    kind_middle_female: 9910,
+    kind_middle_both: 9910,
+    kind_calm_male: 9916,
+    kind_calm_female: 9917,
+    kind_calm_both: 9917
 }

@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from "react"
 import { ANSWERS, ANSWER_IDS, Choice } from "../constants"
 
-type RadioProps = {
+type DoubleRadioProps = {
   choices: Choice[],
+  choices2: Choice[],
   pageId: number,
   changePageId: (pageId: number) => void,
   saveAnswers: (pageId: number, answer: string) => void
   saveFinalAnswer: (answer: string) => void
 }
 
-export const RadioControl = ({
+export const DoubleRadioControl = ({
   choices,
+  choices2,
   pageId,
   changePageId,
   saveAnswers,
-  saveFinalAnswer}: RadioProps) => {
+  saveFinalAnswer}: DoubleRadioProps) => {
     // 選択中のラジオボタンvalue
     const [selected, setSelected] = useState("")
 
@@ -22,7 +24,7 @@ export const RadioControl = ({
     const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
       setSelected(event.target.value)
       saveAnswers(pageId, event.target.value)
-      const finalPageIds = [52,62,91,92,93,94,111,112,113,114,115,116]
+      const finalPageIds = [91,92,93,94,111,112,113,114,115,116]
       if (finalPageIds.includes(pageId)) {
         saveFinalAnswer(event.target.value)
       }
@@ -98,15 +100,13 @@ export const RadioControl = ({
       switch (pageId) {
         case 1:
         case 3:
-        case 51:
-        case 61:
           changePageId(pageId + 1)
           break
         case 2:
           changePageId(value === 'match' ? 3 : 7)
           break
         case 4:
-          changePageId(value === 'fashion' ? 51 : 61)
+          changePageId(value === 'fashion' ? 5 : 6)
           break
         case 7:
           changePageId(value === 'beginner' ? 8 : 10)
@@ -114,8 +114,6 @@ export const RadioControl = ({
         case 8:
           changePageId(getNextIdForBeginner(value))
           break
-        case 52:
-        case 62:
         case 91:
         case 92:
         case 93:
@@ -137,25 +135,51 @@ export const RadioControl = ({
 
     }
     return (
-        <div className={'container form-check ' + (enabled ? '' : 'pointer-events-none')}>
+        <div className={'container form-check pt-6 ' + (enabled ? '' : 'pointer-events-none')}>
             <div className="row">
             {choices.map(choice => {
                 return (
                     <div
-                      className="col-4"
+                      className="col-4 inline-block w-1/3"
                       key={choice.value}>
-                        {/* checked属性に式を定義する */}
-                        <input
-                          id={choice.value}
-                          type="radio"
-                          className="hidden"
-                          value={choice.value} checked={choice.value === selected}
-                          onChange={changeValue}/>
-                        <label
-                          htmlFor={choice.value}
-                          className="flex flex-col min-w-0 w-full max-w-lg mx-auto text-center border-2 rounded-xl border-blue-400 p-2 my-4 hover:bg-blue-200 transition-all">
-                            <span className="fs-6">{choice.label}</span>
-                        </label>
+                        <div className="">
+                          {/* checked属性に式を定義する */}
+                          <input
+                            id={choice.value}
+                            type="radio"
+                            className="relative"
+                            value={choice.value} checked={choice.value === selected}
+                            onChange={changeValue}/>
+                        </div>
+                          <label
+                            htmlFor={choice.value}
+                            className="text-xs">
+                              <span className="">{choice.label}</span>
+                          </label>
+                    </div>
+                )
+            })}
+            </div>
+            <div className="row pt-6">
+            {choices2.map(choice2 => {
+                return (
+                    <div
+                      className="col-4 inline-block w-1/3"
+                      key={choice2.value}>
+                        <div className="">
+                          {/* checked属性に式を定義する */}
+                          <input
+                            id={choice2.value}
+                            type="radio"
+                            className="relative"
+                            value={choice2.value} checked={choice2.value === selected}
+                            onChange={changeValue}/>
+                        </div>
+                          <label
+                            htmlFor={choice2.value}
+                            className="text-xs w-5 mx-1">
+                              <span className="fs-6">{choice2.label}</span>
+                          </label>
                     </div>
                 )
             })}
