@@ -44,7 +44,7 @@ export const AppLayout = (): JSX.Element => {
 
   // radioの質問か判定する
   const isRadio = (pageId: number): boolean => {
-    const radioIds = [1,2,3,4,7,8,91,92,93,94,10,111,112,113,114,115,116]
+    const radioIds = [1,2,3,4,51,52,61,62,7,8,91,92,93,94,10,111,112,113,114,115,116]
     return radioIds.includes(pageId)
   }
 
@@ -65,7 +65,13 @@ export const AppLayout = (): JSX.Element => {
 
   // 最終回答を保存する
   const saveFinalAnswer = (answer: string) => {
-    ANSWERS[999] = `${answer}_${ANSWERS[1]}`
+    if (pageId === 52) {
+      ANSWERS[999] = `${ANSWERS[51]}_${answer}_${ANSWERS[1]}`
+    } else if (pageId === 62) {
+      ANSWERS[999] = `${ANSWERS[61]}_${answer}_${ANSWERS[1]}`
+    } else {
+      ANSWERS[999] = `${answer}_${ANSWERS[1]}`
+    }
   }
   return (
     <>
