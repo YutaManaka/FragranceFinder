@@ -25,6 +25,12 @@ English follows Japanese.
    - GitHub Pages
 - バージョン管理
    - GitHub
+- 進捗管理
+   - ClickUp
+- ドキュメント管理
+   - Notion
+- 画面設計
+   - diagrams.net(旧draw.io)
 
 ## アプリ画面
 ### TOP画面
