@@ -20,6 +20,7 @@ export const RadioControl = ({
 
     // ラジオボタン切り替えイベント
     const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setEnabled(false)
       setSelected(event.target.value)
       saveAnswers(pageId, event.target.value)
       const finalPageIds = [52,62,91,92,93,94,111,112,113,114,115,116]
@@ -31,7 +32,7 @@ export const RadioControl = ({
 
     // 表示後、時間差でボタン押せるようにする
     const [enabled, setEnabled] = useState(false)
-    useEffect(() => {setTimeout(() => {setEnabled(true)}, 1000)})
+    useEffect(() => {setTimeout(() => {setEnabled(true)}, 750)})
 
     // question8の次のID判定
     const getNextIdForBeginner = (value: string): number => {
