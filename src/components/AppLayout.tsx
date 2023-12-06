@@ -75,17 +75,17 @@ export const AppLayout = (): JSX.Element => {
   }
   return (
     <>
-      <div className='h-screen'>
+      <div className='h-screen w-full'>
         {/* ヘッダー */}
-        <div className='w-full bg-white border-b-2 border-gray-300'>
+        <div className='w-full h-16 bg-white border-b-2 border-gray-300'>
           <header>
-            <div className='flex justify-center items-center h-16 px-10'>
+            <div className='flex justify-center items-center px-10'>
               <img src="./header-logo.png" />
             </div>
           </header>
         </div>
         {/* コンテンツ */}
-        <div className='bg-gray-100 py-5 h-5/6 min-h-max'>
+        <div className='bg-gray-100 py-5 h-[calc(100%-112px)] min-h-max'>
           <div className='bg-white mx-10 h-max min-h-full'>
             {/* 質問文 */}
             {isResult(pageId)
@@ -145,16 +145,12 @@ export const AppLayout = (): JSX.Element => {
                 </div>
               }
             </div>
-            {/* 進捗表示 */}
-            {!isResult(pageId) &&
-              <div>0/0</div>
-            }
           </div>
         </div>
         {/* フッター */}
-        <div className='bg-white flex justify-center items-center h-12'>
+        <div className='bg-white flex justify-center h-12 items-center'>
           <div className='text-black text-xs'>
-            © 2019-2023 調香師ユタカのおすすめ人気香水ナビ
+            © 2019-2024 調香師ユタカのおすすめ人気香水ナビ
           </div>
         </div>
       </div>

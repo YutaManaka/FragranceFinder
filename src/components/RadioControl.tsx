@@ -26,7 +26,6 @@ export const RadioControl = ({
       if (finalPageIds.includes(pageId)) {
         saveFinalAnswer(event.target.value)
       }
-      console.log(ANSWERS)
       RadioChangeAction(event.target.value)
     }
 
