@@ -35,13 +35,24 @@ English follows Japanese.
 ## アプリ画面
 ### TOP画面
 - PC版
+<img width="600" src="https://github.com/YutaManaka/FragranceFinder/assets/54618797/74987bf4-c059-43de-9c91-354aa7b3b7f3">
+
 - SP版
+<img width="300" src="https://github.com/YutaManaka/FragranceFinder/assets/54618797/9ad4cf82-c35b-4d34-ae0f-594836b95467">
+
 ### 質問画面
 - PC版
+<img width="600" src="https://github.com/YutaManaka/FragranceFinder/assets/54618797/fc226bab-98ef-4ea1-bcb3-00d3f444abb0">
+
 - SP版
+<img width="300" src="https://github.com/YutaManaka/FragranceFinder/assets/54618797/2c777e94-3245-4e0a-963f-533ad0107355">
+
 ### 結果画面
 - PC版
+<img width="600" src="https://github.com/YutaManaka/FragranceFinder/assets/54618797/c4c40871-712b-47e3-847c-4191a3cab2bf">
+
 - SP版
+<img width="300" src="https://github.com/YutaManaka/FragranceFinder/assets/54618797/ff4e0fb3-6d71-4e05-b98e-fcdfbccc14bb">
 
 ## 参考サイト
 1. 環境構築
@@ -90,13 +101,24 @@ You can find the perfume when you answer only 4 questions.
 ## Function
 ### TOP
 - PC
+<img width="600" src="https://github.com/YutaManaka/FragranceFinder/assets/54618797/74987bf4-c059-43de-9c91-354aa7b3b7f3">
+
 - SP
+<img width="300" src="https://github.com/YutaManaka/FragranceFinder/assets/54618797/9ad4cf82-c35b-4d34-ae0f-594836b95467">
+
 ### Question
 - PC
+<img width="600" src="https://github.com/YutaManaka/FragranceFinder/assets/54618797/fc226bab-98ef-4ea1-bcb3-00d3f444abb0">
+
 - SP
+<img width="300" src="https://github.com/YutaManaka/FragranceFinder/assets/54618797/2c777e94-3245-4e0a-963f-533ad0107355">
+
 ### Result
 - PC
+<img width="600" src="https://github.com/YutaManaka/FragranceFinder/assets/54618797/c4c40871-712b-47e3-847c-4191a3cab2bf">
+
 - SP
+<img width="300" src="https://github.com/YutaManaka/FragranceFinder/assets/54618797/ff4e0fb3-6d71-4e05-b98e-fcdfbccc14bb">
 
 ## Reference
 1. Building an environment
